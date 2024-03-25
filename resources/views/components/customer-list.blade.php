@@ -66,6 +66,10 @@
                         {{ $customer->status }}
                     </td>
                     <td class="flex items-center px-6 py-4">
+                        <a href="{{ route('customer.show', ['customer'=>$customer]) }}"
+                            class="bg-red-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
+                            View
+                        </a>
                         {{-- <x-dashboard.user-actions-dropdown  :user="$customer" /> --}}
                     </td>
                 </tr>

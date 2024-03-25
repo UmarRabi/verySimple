@@ -88,5 +88,7 @@ class SalesRepController extends Controller
     public function destroy($id)
     {
         //
+        SalesRep::where('id', $id)->delete();
+        return redirect()->route('rep.index');
     }
 }

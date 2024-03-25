@@ -54,6 +54,10 @@ class CustomerController extends Controller
     public function show($id)
     {
         //
+        $customer=Customer::with('orders')
+            ->where('id', $id)->first();
+            return view('customer.view')
+                ->with('customer', $customer);
     }
 
     /**

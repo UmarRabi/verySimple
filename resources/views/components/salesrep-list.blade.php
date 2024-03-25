@@ -48,7 +48,15 @@
                         {{ $salesRep->storeNumber }}
                     </td>
                     <td class="flex items-center px-6 py-4">
-                        {{-- <x-dashboard.user-actions-dropdown  :user="$customer" /> --}}
+                        <form id="delete-order-form" action="{{ route('rep.destroy', $salesRep) }}" method="POST" style="display: none;">
+                            @csrf
+                            @method('DELETE')
+                        </form>
+                        <a href="#"
+                            onclick="event.preventDefault(); document.getElementById('delete-order-form').submit();"
+                            class="bg-red-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
+                            Delete
+                        </a>
                     </td>
                 </tr>
             @endforeach
