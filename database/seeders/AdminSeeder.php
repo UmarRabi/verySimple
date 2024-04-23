@@ -18,11 +18,12 @@ class AdminSeeder extends Seeder
     {
         //
         $user = User::create([
-            'email' => 'superadmin@odutex.org',
+            'email' => 'admin@verysimple.org',
             'password' => Hash::make('Sup3r@dm!n'),
             "name"=>"Super Admin",
-            "email_verified_at"=>\Carbon\Carbon::now()
+            "email_verified_at"=>\Carbon\Carbon::now(),
+            'type'=>'admin'
         ]);
-        $user->assignRole('superadmin');
+        $user->assignRole('admin');
     }
 }
